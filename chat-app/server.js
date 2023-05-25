@@ -8,7 +8,11 @@ server.on("connection", (socket) => {
 
   socket.on("data", (data) => {
     socket.write(data);
+    clients.forEach((c) => {
+      c.write(data);
+    })
   })
+  clients.push(socket);
 })
 
 

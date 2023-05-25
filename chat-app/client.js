@@ -16,12 +16,10 @@ const client = net.createConnection({ port: 3008, host: "127.0.0.1" },
   })
 
 
-client.on('close', () => {
-  console.log("close")
-})
 client.on("data", (data) => {
   console.log(data.toString());
 })
+
 
 client.on("end", () => {
   console.log("Connection was ended");
