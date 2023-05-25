@@ -14,7 +14,6 @@ server.on("connection", (socket) => {
   socket.write(`id-${clientId}`)
 
 
-
   socket.on("data", (data) => {
     clients.forEach((s) => {
 
